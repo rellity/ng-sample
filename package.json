@@ -21,6 +21,7 @@
     "tailwindcss": "^4.3.3",
     "typescript": "~5.9.0",
     "vite": "^8.2.2",
-    "@rellity/vite-plugin-angular": "github:rellity/vite-plugin-angular#42bf28e448de1c6c15e9738e8d1d4e24da6ace67"
+    "@rellity/vite-plugin-angular": "github:rellity/vite-plugin-angular#fec72ffa5b261ca0e72d52946f93c3b97544710b",
+    "@rellity/ng-router": "github:rellity/ng-router#d4cc49613e6039be11fa75208c65f75073d51305"
   }
 }

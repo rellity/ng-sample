@@ -7,6 +7,7 @@ export interface Product {
   title: string
   price: number
   thumbnail: string
+  description?: string
 }
 
 export interface ProductsResponse {
@@ -34,6 +35,12 @@ export class DummyJsonApi {
   searchProducts(query: string, limit = 6): Observable<ProductsResponse> {
     return this.#http.get<ProductsResponse>(`${BASE}/products/search`, {
       params: { q: query, limit, select: 'title,price,thumbnail' },
+    })
+  }
+
+  product(id: string): Observable<Product> {
+    return this.#http.get<Product>(`${BASE}/products/${id}`, {
+      params: { select: 'title,price,thumbnail,description' },
     })
   }
 

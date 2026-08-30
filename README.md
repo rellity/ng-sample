@@ -1,11 +1,12 @@
 # ng-sample
 
-angular on vite via [@rellity/vite-plugin-angular](https://github.com/rellity/vite-plugin-angular), styled with tailwind, data from [dummyjson.com](https://dummyjson.com).
+angular on vite via [@rellity/vite-plugin-angular](https://github.com/rellity/vite-plugin-angular), file-based routing via [@rellity/ng-router](https://github.com/rellity/ng-router), styled with tailwind, data from [dummyjson.com](https://dummyjson.com).
 
-- inline templates only, no separate html or css files, no router
+- inline templates only, no separate html or css files
 - zoneless, standalone components, signals
+- file-based routes under `src/routes/` (layout, `[id]` params, 404 catch-all), hash urls so deep links work on github pages
 - tailwind v4 through `@tailwindcss/vite`
-- product search: signal → debounced rxjs pipeline (`debounceTime`, `switchMap`) → signal
+- product search: url-synced query (`injectQueryParam`) → debounced rxjs pipeline (`debounceTime`, `switchMap`) → signal, rows link to `/products/:id` where the param binds straight to a signal input
 - todos: the typical workflow — injectable service, `HttpClient`, observable, `async` pipe
 
 ## run

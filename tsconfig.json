@@ -8,8 +8,13 @@
     "skipLibCheck": true,
     "sourceMap": true
   },
-  "files": ["src/main.ts"],
+  "files": [
+    "src/main.ts"
+  ],
   "angularCompilerOptions": {
     "strictTemplates": true
-  }
+  },
+  "include": [
+    "src/**/*.ts"
+  ]
 }

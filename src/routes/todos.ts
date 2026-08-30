@@ -1,10 +1,14 @@
 import { AsyncPipe } from '@angular/common'
 import { Component, inject } from '@angular/core'
+import type { RouteMeta } from '@rellity/ng-router'
 import { BehaviorSubject, catchError, map, of, switchMap } from 'rxjs'
-import { DummyJsonApi, type Todo } from './api'
+import { DummyJsonApi, type Todo } from '../api'
+
+export const route: RouteMeta = {
+  title: 'todos',
+}
 
 @Component({
-  selector: 'app-todos',
   imports: [AsyncPipe],
   template: `
     <section class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -45,7 +49,7 @@ import { DummyJsonApi, type Todo } from './api'
     </section>
   `,
 })
-export class Todos {
+export default class Todos {
   readonly #api = inject(DummyJsonApi)
   readonly #reload = new BehaviorSubject<void>(undefined)
   readonly todos$ = this.#reload.pipe(

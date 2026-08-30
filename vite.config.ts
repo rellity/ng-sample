@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import angular from 'vite-plugin-angular'
+import angular from '@rellity/vite-plugin-angular'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({

@@ -1,6 +1,6 @@
 # ng-sample
 
-angular on vite via [vite-plugin-angular](https://github.com/rellity/vite-plugin-angular), styled with tailwind, data from [dummyjson.com](https://dummyjson.com).
+angular on vite via [@rellity/vite-plugin-angular](https://github.com/rellity/vite-plugin-angular), styled with tailwind, data from [dummyjson.com](https://dummyjson.com).
 
 - inline templates only, no separate html or css files, no router
 - zoneless, standalone components, signals

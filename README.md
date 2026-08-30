@@ -14,3 +14,16 @@ angular on vite via [vite-plugin-angular](https://github.com/rellity/vite-plugin
 npm i
 npm run dev
 ```
+
+## github pages
+
+no ci — build and push the `gh-pages` branch by hand:
+
+```sh
+npm run build:pages
+git checkout gh-pages
+cp -r dist/* dist/.nojekyll .
+git add -A && git commit -m "chore: publish build to github pages"
+git push origin gh-pages
+git checkout main
+```

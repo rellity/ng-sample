@@ -1,14 +1,14 @@
 import { CurrencyPipe } from '@angular/common'
 import { Component, inject, signal } from '@angular/core'
 import { toObservable, toSignal } from '@angular/core/rxjs-interop'
-import { RouterLink, href, injectQueryParam } from '@rellity/ng-router'
+import { Link, injectQueryParam } from '@rellity/ng-router'
 import { catchError, debounceTime, distinctUntilChanged, of, switchMap, tap } from 'rxjs'
 import { DummyJsonApi, type ProductsResponse } from '../api'
 
 const EMPTY: ProductsResponse = { products: [], total: 0 }
 
 @Component({
-  imports: [CurrencyPipe, RouterLink],
+  imports: [CurrencyPipe, Link],
   template: `
     <section class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
       <h2 class="text-sm font-semibold text-slate-900">product search</h2>
@@ -31,7 +31,7 @@ const EMPTY: ProductsResponse = { products: [], total: 0 }
           @for (product of response.products; track product.id) {
             <li>
               <a
-                [routerLink]="link(product.id)"
+                [to]="'/products/:id'" [params]="{ id: product.id }"
                 class="flex items-center gap-3 py-2 transition hover:bg-slate-50"
               >
                 <img
@@ -69,7 +69,6 @@ export default class Products {
       tap(() => this.loading.set(false)),
     ),
   )
-  readonly link = (id: number) => href('/products/:id', { id })
 
   onInput(event: Event) {
     this.q.set((event.target as HTMLInputElement).value || undefined)

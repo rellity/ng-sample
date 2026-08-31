@@ -1,7 +1,7 @@
 import { CurrencyPipe } from '@angular/common'
 import { Component, inject, input } from '@angular/core'
 import { toObservable, toSignal } from '@angular/core/rxjs-interop'
-import { RouterLink, href } from '@rellity/ng-router'
+import { Link } from '@rellity/ng-router'
 import type { RouteMeta } from '@rellity/ng-router'
 import { catchError, of, switchMap } from 'rxjs'
 import { DummyJsonApi } from '../../api'
@@ -11,10 +11,10 @@ export const route: RouteMeta = {
 }
 
 @Component({
-  imports: [CurrencyPipe, RouterLink],
+  imports: [CurrencyPipe, Link],
   template: `
     <section class="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-      <a [routerLink]="backLink" class="text-xs text-indigo-600 hover:underline">← back to search</a>
+      <a to="/products" class="text-xs text-indigo-600 hover:underline">← back to search</a>
       @if (product(); as p) {
         <div class="mt-3 flex items-start gap-4">
           <img [src]="p.thumbnail" [alt]="p.title" class="h-20 w-20 rounded-xl bg-slate-100 object-cover" />
@@ -39,5 +39,4 @@ export default class ProductDetail {
       switchMap((id) => this.#api.product(id).pipe(catchError(() => of(null)))),
     ),
   )
-  readonly backLink = href('/products')
 }

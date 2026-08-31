@@ -22,6 +22,6 @@
     "typescript": "~5.9.0",
     "vite": "^8.2.2",
     "@rellity/vite-plugin-angular": "github:rellity/vite-plugin-angular#fec72ffa5b261ca0e72d52946f93c3b97544710b",
-    "@rellity/ng-router": "github:rellity/ng-router#ce55dfbd7748d66f443f809022718434a93eb903"
+    "@rellity/ng-router": "github:rellity/ng-router#604fab571fda19a9b6717afbe861a29727793aab"
   }
 }

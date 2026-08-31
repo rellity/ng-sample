@@ -31,7 +31,7 @@ const EMPTY: ProductsResponse = { products: [], total: 0 }
           @for (product of response.products; track product.id) {
             <li>
               <a
-                [to]="'/products/:id'" [params]="{ id: product.id }"
+                to="/products/:id" [params]="{ id: product.id }"
                 class="flex items-center gap-3 py-2 transition hover:bg-slate-50"
               >
                 <img

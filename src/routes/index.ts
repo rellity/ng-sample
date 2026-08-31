@@ -11,6 +11,7 @@ import { Link } from '@rellity/ng-router'
       </p>
       <ul class="mt-3 space-y-1 text-sm">
         <li><a to="/products" class="text-indigo-600 hover:underline">product search</a> — url-synced query through a debounced rxjs pipeline</li>
+        <li><a to="/products" [query]="{ q: 'phone' }" class="text-indigo-600 hover:underline">a preset search</a> — query params straight from the link</li>
         <li><a to="/products/:id" [params]="{ id: 1 }" class="text-indigo-600 hover:underline">a product page</a> — route param bound straight to a signal input</li>
         <li><a to="/todos" class="text-indigo-600 hover:underline">todos</a> — service, observable, async pipe</li>
       </ul>
